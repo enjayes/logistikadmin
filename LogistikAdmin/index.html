@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <meta charset="utf-8"/>
+    <title>EDEKA</title>
+    <link href='libs/fullcalendar-2.2.1/fullcalendar.css' rel='stylesheet' type="text/css"/>
+    <link href='libs/fullcalendar-2.2.1/fullcalendar.print.css' rel='stylesheet' media='print' type="text/css"/>
+
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/calendar.css" rel="stylesheet" type="text/css">
+    <link href="css/searchWidget.css" rel="stylesheet" type="text/css">
+    <link href="css/multipleSelectionWidget.css" rel="stylesheet" type="text/css">
+
+    <link href="libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="libs/jquery.mobile.datepicker.css"/>
+    <link rel="stylesheet" href="libs/jquery.mobile.datepicker.theme.css"/>
+
+
+
+    <link rel="stylesheet" href="libs/timepicker/jquery-clockpicker.min.css"/>
+    <link rel="stylesheet" href="libs/dataTables/jquery.dataTables.css"/>
+
+    <link rel="stylesheet" href="css/charts.css"/>
+
+    <link type="image/x-icon" href="img/favicon.ico" rel="shortcut icon">
+
+</head>
+<body style="display:none">
+
+<div id="servererror" style="display:none">Serververbindung unterbrochen...</div>
+
+<div id="page" data-role="page" style="opacity:0">
+
+<div id="bannerbackground"></div>
+<div id="mainbackground"></div>
+
+
+<img id="bannerext" height="60px" width="100%" src="img/bannerext.png">
+<img id="banner" height="60px" src="img/bannerlogo.png">
+
+<!--Besucherschein ------------>
+<div id="besucherschein" class="fadein" style="display:none">
+    <h1  id="besucherscheinTitle" style="margin-bottom: 5px;text-align: center;border: 1px solid #aaa;background: #eee;margin-top: 23px;padding: 5px;">Besucherschein</h1>
+    <div id="besucherscheinPrint" style="width:100%;text-align: right"><a style="cursor:pointer!important" onclick="window.print();">Ausdrucken</a></div>
+    <div id="besucherscheinMeldung" style="display:none"></div>
+    <div id="besucherscheinContent" class="fadein" style="display:none">
+        <br>
+        <div style="text-align: center">
+        <span class="titledatafield"> Markt: </span><span class="contentdatafield" id="besucherscheinMarkt"></span>
+        </div>
+        <br>
+        <table style="width:100%">
+
+            <tr>
+                <td class="titledatafield">Firma:</td>
+                <td class="contentdatafield"  id="besucherscheinFirma"></td>
+                <td class="titledatafield">Datum:</td>
+                <td class="contentdatafield"  id="besucherscheinDatum"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Herr/Frau:</td>
+                <td class="contentdatafield"  id="besucherscheinLieferant"></td>
+                <td class="titledatafield">Uhrzeit:</td>
+                <td class="contentdatafield"  id="besucherscheinUhrzeit"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Thematik:</td>
+                <td class="contentdatafield"  id="besucherscheinThematik" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Ziel:</td>
+                <td class="contentdatafield"  id="besucherscheinZiel" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Grund:</td>
+                <td class="contentdatafield"  id="besucherscheinGrund" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Gespächspartner:</td>
+                <td class="contentdatafield"  id="besucherscheinGespraechspartner" colspan="3"></td>
+            </tr>
+        </table>
+        <br>
+        <table style="width:100%">
+            <tr>
+                <td class="titledatafield">Bearbeitet:</td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Auftrag getätigt:</td>
+                <td><div class="selectiondatafield" id="besucherscheinAuftraggetaetigt" >&nbsp</div></td>
+
+                <td class="titledatafield">Verkostung:</td>
+                <td><div class="selectiondatafield" id="besucherscheinVerkostung" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">MHD - Kontrolle:</td>
+                <td><div class="selectiondatafield" id="besucherscheinMHD" >&nbsp</div></td>
+
+                <td class="titledatafield">Sortimentsinfo:</td>
+                <td><div class="selectiondatafield" id="besucherscheinSortimentsinfo" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Rückname:</td>
+                <td><div class="selectiondatafield" id="besucherscheinRuecknahme" >&nbsp</div></td>
+                <td class="titledatafield">Aktionsabsprache:</td>
+                <td><div class="selectiondatafield" id="besucherscheinAktionsabsprache" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Relamationsbearbeitung:</td>
+                <td><div class="selectiondatafield" id="besucherscheinRelamationsbearbeitung" >&nbsp</div></td>
+                <td class="titledatafield">Absprache:</td>
+                <td><div class="selectiondatafield" id="besucherscheinAbsprache" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Warenaufbau/Plazierung:</td>
+                <td><div class="selectiondatafield" id="besucherscheinWarenaufbau" >&nbsp</div></td>
+                <td class="titledatafield">Bemusterung:</td>
+                <td><div class="selectiondatafield" id="besucherscheinBemusterung" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Umbau:</td>
+                <td><div class="selectiondatafield" id="besucherscheinUmbau" >&nbsp</div></td>
+                <td class="titledatafield">Verlosung:</td>
+                <td><div class="selectiondatafield" id="besucherscheinVerlosung" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Info.-Gerpsäch:</td>
+                <td><div class="selectiondatafield" id="besucherscheinInfoGespraech" >&nbsp</div></td>
+                <td class="titledatafield">NR - Abgabe:</td>
+                <td><div class="selectiondatafield" id="besucherscheinNrAbgabe" >&nbsp</div></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">VK-€ Betrag NR:</td>
+                <td class="contentdatafield"  id="besucherscheinVKBetrag" colspan="3"></td>
+            </tr>
+            <tr>
+                <td class="titledatafield">Warengruppe:</td>
+                <td class="contentdatafield"  id="besucherscheinWarengruppe" colspan="3"></td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <table style="width:100%">
+            <tr>
+                <td class="titledatafield">Notizen:</td>
+                <td class="contentdatafield"  id="besucherscheinNotizen" colspan="3"></td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+
+
+</div>
+
+<!--Admin page ------------>
+<div id="pagecontent" data-demo-html="true">
+<div data-role="tabs" id="tabs">
+<div data-role="navbar" style="opacity:0">
+
+    <ul id="maintabs">
+        <li><a id="uebersichtTab" href="#uebersicht" data-ajax="false" onclick="tabsController.clickedTab(0)">Übersicht</a></li>
+        <li><a id="termineTab" href="#termine" data-ajax="false" onclick="tabsController.clickedTab(1)">Termine</a></li>
+        <li><a id="nachrichtenTab" href="#nachrichten" data-ajax="false" onclick="tabsController.clickedTab(2)">Nachrichten</a></li>
+        <li><a id="lieferantenTab" href="#lieferanten" data-ajax="false" onclick="tabsController.clickedTab(3)">Lieferanten</a></li>
+        <li id="konfigurationTabParent" style="width:40px"><a id="konfigurationsTab" data-icon="gear" href="#konfiguration" data-ajax="false" onclick="tabsController.clickedTab(4)"></a></li>
+
+    </ul>
+
+</div>
+<div id="uebersicht" class="ui-body-d ui-content">
+    <div class="tabinhalt">
+        <div id="uebersichtMessageTabs" class="subTabToggle" data-role="controlgroup" data-type="horizontal" data-mini="true">
+            <a id="showAuftragsHistorieTab" onclick="uebersichtTab.openSubTab(0)" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-bars active">Auftragshistorie</a>
+            <a id="showStatistikTab" onclick="uebersichtTab.openSubTab(1)" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-user">Statistiken</a>
+        </div>
+        <div id="historieTab" class="uebersichtTab">
+
+            <div id="auswahlAuftragshistorie" >
+
+                <h3 style="font-size: 16px;padding-top:15px">Lieferanten</h3>
+
+                <div style="padding-left:5px">
+                    <div id="selectedAuftragsHistorieLieferanten"></div>
+                    <div id="searchAuftragsHistorieLieferanten"></div>
+                </div>
+                <h3 style="font-size: 16px;">Märkte</h3>
+
+                <div style="padding-left:5px">
+                    <div id="auftragsHistorieMarktSelection" style="display:inline-block"></div>
+                </div>
+
+                <h3 style="font-size: 16px;">Warengruppen</h3>
+                <div style="padding-left:5px">
+                    <div data-role="controlgroup" data-enhanced="true" class="ui-controlgroup  ui-controlgroup-horizontal ui-corner-all ui-mini ">
+                        <fieldset  data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini">
+                            <div id="auftragsHistorieWarengruppenSelection" class="ui-controlgroup-controls">
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>Ausgewählte Aufträge</h3>
+
+            <div id="auftragsZusammenfassung">
+
+            </div>
+
+            <table id="auftragsHistorie" class="display" cellspacing="0" width="100%">
+
+            </table>
+        </div>
+        <div id="statistikTab" class="uebersichtTab" style="display:none">
+
+            <div style="display:none">
+            <h3>Übersicht</h3>
+
+
+            <table id="statistikUebersicht" class="display" cellspacing="0" width="100%">
+
+            </table>
+            </div>
+            <div id="aufteilungChart" class="labeled-chart-container">
+                <div class="canvas-holder">
+                    <canvas class="chart-area" width="150" height="150"/>
+                </div>
+                <div class="legend"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div id="termine" class="ui-body-d ui-content">
+    <div class="tabinhalt">
+        <div id="termineMarktSelection" style="margin-bottom:15px"></div>
+        <div id='calendar'></div>
+    </div>
+</div>
+<div id="nachrichten" class="ui-body-d ui-content">
+    <div class="tabinhalt">
+        <div id="writeMessageTabs" class="subTabToggle" data-role="controlgroup" data-type="horizontal" data-mini="true">
+            <a id="writeNewLieferantenMessage" onclick="nachrichtenTab.openSubTab(0)" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus active">Schreiben</a>
+            <a id="sentNewLieferantenMessage" onclick="nachrichtenTab.openSubTab(1)" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-u">Gesendet</a>
+            <a id="recievedNewLieferantenMessage" onclick="nachrichtenTab.openSubTab(2)" href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-d">Empfangen</a>
+        </div>
+        <div id="writeMessage" class="messageTab">
+            <div id="selectedMessageLieferanten"></div>
+            <div id="searchMessageLieferanten"></div>
+
+            <div id="nachrichtenMarktSelection" style="margin-top:10px;display:inline-block"></div>
+
+            <div id="messageLieferantenEditor">
+                <textarea id="messageLieferantenCKEditor"></textarea>
+            </div>
+
+            <div id="sendMessageLieferant" class="greenbutton ui-disabled ui-btn ui-input-btn ui-btn-b ui-corner-all ui-shadow ui-btn-inline ui-mini ui-icon-mail ui-btn-icon-left" onclick="nachrichtenController.sendeNachricht()">
+                Nachricht senden
+            </div>
+        </div>
+        <div id="recievedMessage" class="messageTab" style="display:none">
+            <div id="recievedMessageContainer"></div>
+            <div id="showMoreReceivedMessages" class="ui-btn ui-input-btn ui-btn-a ui-corner-all ui-shadow ui-btn-inline ui-mini ui-icon-carat-d ui-btn-icon-left" onclick="nachrichtenController.showMoreRecieved()">Ältere anzeigen</div>
+        </div>
+        <div id="sentMessage" class="messageTab" style="display:none">
+            <div id="sentMessageContainer"></div>
+            <div id="showMoreSentMessages" class="ui-btn ui-input-btn ui-btn-a ui-corner-all ui-shadow ui-btn-inline ui-mini ui-icon-carat-d ui-btn-icon-left" onclick="nachrichtenController.showMoreSent()">Ältere anzeigen</div>
+        </div>
+    </div>
+</div>
+<div id="lieferanten">
+    <div class="tabinhalt ">
+
+        <div id="suchelieferanten" data-demo-html="true">
+
+            <div id="searchInfoLieferanten"></div>
+
+            <div id="lieferanthinzufuegen" class="greenbutton ui-btn ui-input-btn ui-btn-b ui-corner-all ui-shadow ui-btn-inline ui-mini ui-icon-plus ui-btn-icon-left" onclick="lieferantenController.lieferantenHinzufuegen()">
+                Neuer Lieferant
+            </div>
+
+        </div>
+
+
+        <div id="lieferantenUebersicht" style="display:none" class="fadein">
+            <h2 id="lieferantenUebersichtTitle">Lieferanten </h2>
+            <ul id="lieferantenUebersichtListe" data-role="listview" data-inset="true">
+
+            </ul>
+        </div>
+
+
+        <div id="lieferantenInformationen" style="display:none">
+
+            <h2 id="lieferantBearbeitenTitle">Lieferant </h2>
+            <table>
+                <tr>
+                    <th>
+                        <label for="lieferantVorname" class="">Vorname:</label>
+                        <input type="text" name="user" id="lieferantVorname" value="" placeholder="" data-theme="a">
+                    </th>
+                    <th>
+                        <label for="lieferantName" class="">Name:</label>
+                        <input type="text" name="user" id="lieferantName" value="" placeholder="" data-theme="a">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="lieferantBearbeitenColor" class="">Farbe:</label>
+
+                        <!--div  style="font-size: 26px; margin-bottom: 10px; margin-top: 10px; width: 120px; color: rgb(0,0,0); border-radius: 3px; background-color: rgb(0,0,0);"
+                             class="ui-input-text ui-body-a ui-corner-all ui-shadow-inset">&nbsp
+                        </div-->
+                        <input id="lieferantBearbeitenColor" type="color" name="favcolor" value="#000000">
+                    </th>
+                    <th>
+                        <label for="lieferantBearbeitenPin" class="">Pin:</label>
+                        <input type="text" name="user" id="lieferantBearbeitenPin" value="" placeholder="" data-theme="a" readonly>
+
+                    </th>
+
+                </tr>
+                <tr>
+                    <th>
+                        <label for="lieferantBearbeitenFirma" class="">Firma:</label>
+                        <input type="text" name="user" id="lieferantBearbeitenFirma" value="" placeholder="" data-theme="a">
+                    </th>
+                    <th>
+                        <label for="lieferantBearbeitenTelefon" class="">Telefon:</label>
+                        <input type="text" name="user" id="lieferantBearbeitenTelefon" value="" placeholder="" data-theme="a">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="lieferantBearbeitenEMail" class="">E-Mail:</label>
+                        <input type="text" name="user" id="lieferantBearbeitenEMail" value="" placeholder="" data-theme="a">
+                    </th>
+                    <th>
+
+                        <label for="lieferantBearbeitenAdresse" class="">Adresse:</label>
+                        <textarea type="text" name="user" id="lieferantBearbeitenAdresse" value="" placeholder="" data-theme="a"></textarea>
+
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+
+                        <label for="lieferantBearbeitenNotizen" class="">Notizen:</label>
+                        <textarea type="text" name="user" id="lieferantBearbeitenNotizen" value="" placeholder="" data-theme="a"></textarea>
+
+                    </th>
+                </tr>
+            </table>
+
+            <br>
+            <br>
+            <a href="" id="lieferantZurueck" onclick="lieferantenController.zeigeLieferantenUebersichtCheckSave()"
+               class="ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Übersicht</a>
+            <a href="" id="speichereLieferant" onclick="lieferantenController.speichereAktuellenLieferant()" style="opacity:0"
+               class="greenbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-disabled ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Speichern</a>
+            <a href="" id="rueckgaengigLieferant" onclick="lieferantenController.abbrechenBearbeitungAktuellerLieferant()" style="opacity:0"
+               class="redbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-disabled ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Abbrechen</a>
+            <a href="" id="lieferantZeigeAuftraege" onclick="uebersichtController.showJobs(lieferantenController.aktuellerLieferant)"
+               class="ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-a" data-transition="pop">Aufträge anzeigen</a>
+            <a href="" id="lieferantErzeugeEvent" onclick="termineController.erzeugeEvent(termineTab.calenderFactory.moment().stripTime(),lieferantenController.aktuellerLieferant)"
+               class="ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-plus ui-btn-icon-left ui-btn-a" data-transition="pop">Termin anlegen</a>
+            <a href="" id="lieferantLoeschen" onclick="lieferantenController.loescheAktuellenLieferant()"
+               class="redbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Löschen</a>
+
+        </div>
+        <!--/demo-html -->
+    </div>
+
+</div>
+<div id="konfiguration">
+    <div class="tabinhalt ">
+        <h2 style="margin-top: 5px;">Standorte</h2>
+
+        <div id="konfigurationMarktSelection" style="margin-bottom:15px"></div>
+        <div id="marktInformationen" style="padding-top: 5px;width:40%">
+            <label for="markttelefon" class="">Telefon:</label>
+            <input type="text" name="user" id="markttelefon" value="" placeholder="" data-theme="a">
+            <label for="smsinfo" class="">Per SMS informieren</label>
+            <input type="checkbox" name="checkbox-1" id="smsinfo"/>
+            <label for="callinfo" class="">Per Anruf informieren</label>
+            <input type="checkbox" name="checkbox-1" id="callinfo"/>
+
+            <label for="marktemails" style="margin-top: 15px;">E-Mails:</label>
+            <textarea type="text" name="user" id="marktemails" value="" placeholder="" data-theme="a"></textarea>
+            <br>
+
+            <a href="" id="speichereMarkt" onclick="konfigurationsController.speichereAktuellenMarkt()" style="opacity:0"
+               class="greenbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow  ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Speichern</a>
+            <a href="" id="rueckgaengigMarkt" onclick="konfigurationsController.abbrechenBearbeitungAktuellerMarkt()" style="opacity:0"
+               class="redbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a"
+               data-transition="pop">Abbrechen</a>
+        </div>
+        <div id="infoProgrammer" style="position: absolute;right: 5px;">© Niedermeier &amp; Schmidbartl - 2014 TU München</div>
+
+    </div>
+</div>
+</div>
+</div>
+
+
+<div data-role="popup" id="popupTermin" data-dismissible="false" data-theme="a" class="ui-corner-all">
+
+    <div style="padding:10px 20px;">
+        <h2 id="terminheader"></h2>
+
+        <label for="termintitel" class="">Titel:</label>
+        <input type="text" name="user" id="termintitel" value="" placeholder="" data-theme="a">
+        <label for="terminMarktSelection" class="">Markt:</label>
+
+        <div id="terminMarktSelection" style="margin-bottom:15px"></div>
+
+        <!--
+        <label for="eventDate" class="">Datum:</label>
+        <input id="eventDate" type="text" data-role="date">
+        -->
+        <label for="eventDate">Datum:</label>
+        <input type="text" data-role="date" name="date" id="eventDate" value=""  />
+
+
+        <div class="input-group clockpicker">
+            <input type="text" class="form-control" value="12:00">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                </span>
+        </div>
+
+        <div id="lieferantRepeatTerminParent" class="topMarginCheckbox">
+
+            <label>
+                <input id="lieferantRepeatTermin" type="checkbox" name="">Wiederholen alle
+            </label>
+
+            <div id="lieferantRepeatTerminInputParent">
+                <input id="lieferantRepeatTerminInput" type="text">
+            </div>
+
+            <div id="repeatDaysText">Tage ab</div>
+
+            <div id="eventDateStartParent">
+                <input type="text" data-role="date" name="date" id="eventDateStart" value=""  />
+            </div>
+
+
+        </div>
+        <label class="topMarginCheckbox">
+            <input id="lieferantAlldayTermin" type="checkbox" name="">Ganztägig
+        </label>
+
+
+        <label id="lieferantTerminLabel" for="lieferantTermin" class="">Lieferant:</label>
+
+        <div id="lieferantAuswahl">
+            <div id="searchTerminLieferanten"></div>
+            <div id="lieferantTermin">
+                <input type="text" name="user" id="lieferantenTerminReadyOnly" value="" placeholder="" data-theme="a" readonly>
+            </div>
+            <div id="lieferantAnzeigen">
+                <button id="" title="Lieferanten anzeigen" onclick="termineController.oeffneLieferantenTab()" class="ui-btn-icon-notext ui-btn ui-corner-all ui-mini ui-mini ui-btn-inline ui-shadow ui-btn-a ui-icon-user">Ok
+                </button>
+            </div>
+        </div>
+        <label id="terminnotizenLabel" for="terminnotizen" class="">Notizen:</label>
+        <textarea id="terminnotizen" rows="7"></textarea>
+        <a id="zeigeauftragvonterminbutton" onclick="termineController.showJobInNewWindow(termineController.aktuellesEvent.jobId);"
+           class=" ui-btn ui-corner-all ui-mini ui-mini ui-btn-inline ui-shadow ui-btn-b ui-btn-icon-left ui-icon-edit">Auftrag anzeigen
+        </a>
+        <div class="bottombuttons saved">
+            <a id="speichereaktuelleseventbutton" onclick="termineController.speichereAktuellesEvent();" class="greenbutton ui-btn ui-corner-all ui-mini ui-btn-inline ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check"
+               style="display:none">Speichern
+            </a>
+            <a id="abbrechenbearbeitungaktuelleseventbutton" onclick="termineController.abbrechenBearbeitungAktuellesEvent();"
+               class=" ui-btn ui-corner-all ui-mini ui-mini ui-btn-inline ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Ok
+            </a>
+        </div>
+        <a id="loescheaktuelleseventbutton" onclick="termineController.loescheAktuellenTermin();"
+           class="redbutton ui-btn ui-corner-all ui-mini ui-mini ui-btn-inline ui-shadow ui-btn-b ui-btn-icon-left ui-icon-delete">Löschen
+        </a>
+    </div>
+
+</div>
+
+<div data-role="popup" id="savePopup" data-theme="a" data-dismissible="false" style="max-width:400px;">
+    <div data-role="header" data-theme="a">
+        <h1>Speichern</h1>
+    </div>
+    <div role="main" class="ui-content">
+
+        <p style="margin: 20px 20px 25px 20px;">Wollen Sie die Änderungen speichern?</p>
+
+        <div style="margin-left: auto;margin-right:auto;max-width:290px; overflow: visible;white-space: nowrap;">
+            <a href="#" onclick="lieferantenController.savePopupYes()" class="greenbutton ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-rel="back">Ja</a>
+            <a href="#" onclick="lieferantenController.savePopupNo()" class="redbutton  ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a" data-rel="back"
+               data-transition="flow">Nein</a>
+            <a href="#" onclick="lieferantenController.savePopupCancel()" class="ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow  ui-btn-inline ui-icon-back ui-btn-icon-left ui-btn-a" data-rel="back" data-transition="flow">Abbrechen</a>
+        </div>
+    </div>
+</div>
+
+<div data-role="popup" id="deleteLieferantPopup" data-theme="a" data-dismissible="false" style="max-width:430px;">
+    <div data-role="header" data-theme="a">
+        <h1>Löschen</h1>
+    </div>
+    <div role="main" class="ui-content">
+
+        <p style="margin: 20px 20px 25px 20px;">Wollen Sie diesen Lieferanten wirklich löschen?</p>
+
+        <div style="margin-left: auto;margin-right:auto;max-width:160px">
+            <a href="#" onclick="lieferantenController.deletePopupYes()" class="redbutton  ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-rel="back"
+               data-transition="flow">Ja</a>
+            <a href="#" onclick="lieferantenController.deletePopupNo()" class=" ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a" data-rel="back">Nein</a>
+        </div>
+    </div>
+</div>
+
+<div data-role="popup" id="deleteTerminPopup" data-theme="a" data-dismissible="false" style="max-width:430px;">
+    <div data-role="header" data-theme="a">
+        <h1>Löschen</h1>
+    </div>
+    <div role="main" class="ui-content">
+
+        <p style="margin: 20px 20px 25px 20px;">Wollen Sie diesen Termin wirklich löschen?</p>
+
+        <div style="margin-left: auto;margin-right:auto;max-width:160px">
+            <a href="#" onclick="termineController.deletePopupYes()" class="redbutton  ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-rel="back"
+               data-transition="flow">Ja</a>
+            <a href="#" onclick="termineController.deletePopupNo()" class=" ui-btn ui-btn-b ui-mini ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a" data-rel="back">Nein</a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+<!--Own Libraries ------------------------------------------------->
+
+<!-- jQuery --->
+
+<script src="js/router.js"></script>
+
+
+<script src="libs/jquery-1.11.1.min.js"></script>
+
+<!-- Routing -->
+
+<script src="libs/jquery.mobile.router.js"></script>
+<script src='libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js'></script>
+
+<script src="libs/socket.io.js"></script>
+
+
+<script src="libs/jQuery.ui.datepicker.js"></script>
+
+<script src="libs/jquery.mobile.datepicker.js"></script>
+
+
+
+
+
+<script src="libs/timepicker/jquery-clockpicker.js"></script>
+
+
+<script src="libs/signals.min.js"></script>
+<script src="libs/crossroads.js"></script>
+
+
+<script src="libs/Chart.min.js"></script>
+
+
+<!--CKEditor-->
+
+<script src="libs/ckeditor/ckeditor.js"></script>
+<!----->
+
+
+<script src='libs/dataTables/jquery.dataTables.min.js'></script>
+
+
+<!--Kalender --->
+<script src='libs/fullcalendar-2.2.1/lib/moment.min.js'></script>
+<script src='libs/fullcalendar-2.2.1/fullcalendar.js'></script>
+<script src='libs/fullcalendar-2.2.1/lang/de.js'></script>
+<!-------------->
+
+<!-- ---->
+<script type="text/javascript" src="libs/sjcl.js"></script>
+<!-- ---->
+
+
+
+<script src='js/misc.js'></script>
+
+<script src='js/multipleSelectionWidget.js'></script>
+<script src='js/searchWidget.js'></script>
+
+<script src='js/lieferant.js'></script>
+<script src='js/calenderEvent.js'></script>
+
+<script src='js/serverController.js'></script>
+<script src='js/tabsController.js'></script>
+
+<script src='js/chartFactory.js'></script>
+
+<script src='js/uebersichtController.js'></script>
+<script src='js/termineController.js'></script>
+<script src='js/nachrichtenController.js'></script>
+<script src='js/lieferantenController.js'></script>
+<script src='js/jobsController.js'></script>
+<script src='js/konfigurationsController.js'></script>
+
+
+<script src='js/uebersichtTab.js'></script>
+<script src='js/termineTab.js'></script>
+<script src='js/lieferantenTab.js'></script>
+<script src='js/nachrichtenTab.js'></script>
+<script src='js/konfigurationsTab.js'></script>
+
+<script src='js/uiController.js'></script>
+
+<script src='js/index.js'></script>
+
+
+</body>
+</html>

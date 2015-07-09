@@ -1,0 +1,72 @@
+#calendar {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fc-button.fc-corner-right {
+    border-top-right-radius: 4px!important ;
+    border-bottom-right-radius: 4px!important ;
+}
+
+.fc-button.fc-corner-left  {
+    border-top-left-radius: 4px!important ;
+    border-bottom-left-radius: 4px!important ;
+}
+
+.fc-button.fc-state-active,.fc-button.fc-state-down {
+    background-color: #38c!important;
+    color:#fff!important;
+    text-shadow: none!important ;
+
+}
+
+.fc-button{
+    box-shadow:none!important;
+    background-image: none!important ;
+
+    background-color: #f6f6f6!important ;
+    border-color: #ddd!important ;
+    color: #333!important ;
+    text-shadow: 0 1px 0 #f3f3f3!important ;
+    font-weight: 700;
+    font-size: 13px!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    height: 35px!important;
+}
+
+.fc-time, .fc-title{
+    color:#fff!important ;
+    font-weight: normal!important ;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+
+.fc-axis.fc-time{
+    color:#000!important ;
+}
+
+.fc-header.fc-widget-header .fc-title{
+    color:#000!important ;
+}
+
+
+.fc-view-container{
+    background-color: #fff;
+}
+
+
+.fc-event {
+    border: 1px solid #38c;
+    background-color: #38c;
+}
+
+.fc-day-grid-event > .fc-content {
+    height: 25px;
+    padding-top: 6px;
+}
+
+.fc-day-grid-event > .fc-content span{
+    font-weight: normal;
+}

@@ -1,0 +1,1342 @@
+@media (max-device-width: 1400px) {
+    #tabs, .ui-popup, #mainbackground {
+
+        transform-origin: 50% 10px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    #mainbackground {
+        height: 125% !important;
+    }
+
+    .ui-navbar {
+        -webkit-transform: translate(0, 10px);
+        -moz-transform: translate(0, 10px);
+        -ms-transform: translate(0, 10px);
+        -o-transform: translate(0, 10px);
+        transform: translate(0, 10px);
+    }
+}
+
+/**
+Custom style jquery
+**/
+
+html {
+    overflow-y: scroll;
+
+}
+
+body {
+    background: none !important;
+}
+
+#page {
+    min-height: 100% !important;
+    overflow-y: hidden
+}
+
+#page.besucherschein {
+    min-height: 1500px !important;
+}
+
+#page.besucherschein #mainbackground {
+    display:none!important;
+}
+
+/**
+ Printing Besucherschein
+**/
+@media print {
+    #page.besucherschein{
+        width:100%!important;
+    }
+    #page.besucherschein #bannerbackground {
+        background: #fff !important;
+    }
+
+    #besucherscheinPrint{
+      display:none!important;
+    }
+    #page.besucherschein #besucherschein {
+        top:74px!important;
+        width:110%!important;
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+
+        transform-origin: 0 0;
+        transform: scale(0.9);
+
+
+        left:0!important;
+        background: #fff !important;
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none !important;
+
+    }
+
+    #page.besucherschein #besucherscheinNotizen{
+        border-bottom: none!important;
+    }
+
+
+}
+
+button {
+    outline: none !important;
+}
+
+#servererror {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 34px;
+    background-color: #B80000;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    padding: 7px;
+    z-index: 100000;
+}
+
+.ui-page-theme-a .ui-btn:hover, html .ui-bar-a .ui-btn:hover, html .ui-body-a .ui-btn:hover, html body .ui-group-theme-a .ui-btn:hover, html head+body .ui-btn.ui-btn-a:hover, .ui-page-theme-a .ui-btn, html .ui-bar-a .ui-btn, html .ui-body-a .ui-btn, html body .ui-group-theme-a .ui-btn, html head+body .ui-btn.ui-btn-a, .ui-page-theme-a .ui-btn:visited, html .ui-bar-a .ui-btn:visited, html .ui-body-a .ui-btn:visited, html body .ui-group-theme-a .ui-btn:visited, html head+body .ui-btn.ui-btn-a:visited {
+    text-shadow: none !important;
+}
+
+.ui-navbar ul {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/**
+Datebox
+**/
+
+#popupTermin .eventDateparent {
+    display: inline-block;
+    width: 78%;
+    float: left;
+    position: relative;
+    margin: 0;
+
+}
+
+#popupTermin .clockpicker .ui-input-text {
+    margin: 0;
+}
+
+#popupTermin .eventDateparent .input-group-addon {
+    top: -1px !important;
+
+}
+
+#popupTermin .eventDateparent .input-group-addon .glyphicon-time:before {
+    content: "\e011";
+}
+
+#popupTermin .input-group.clockpicker {
+    display: inline-block !important;
+    width: 20% !important;
+    float: right !important;
+}
+
+#popupTermin .ui-checkbox.lieferantAlldayTerminparent {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -10px;
+}
+
+#popupTermin .ui-checkbox.lieferantAlldayTerminparent .ui-btn, #lieferantRepeatTerminParent .ui-checkbox .ui-btn {
+    border: none !important;
+    font-weight: normal !important;
+    background-color: #fff !important;
+}
+
+#lieferantRepeatTerminParent {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+}
+
+
+#lieferantRepeatTerminParent #lieferantRepeatTerminInputParent {
+    display: inline-block;
+    position: absolute;
+    top: -16px;
+    left: 160px;
+    width: 60px;
+}
+
+
+#lieferantRepeatTerminParent #eventDateStartParent {
+    display: inline-block;
+    position: absolute;
+    top: -16px;
+    left: 295px;
+    width: 98px;
+}
+
+#lieferantRepeatTerminParent #repeatDaysText {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 228px;
+    width: 60px;
+}
+
+#lieferantRepeatTerminParent .ui-checkbox .ui-btn {
+    padding-right: 0px;
+
+}
+
+#lieferantRepeatTerminParent .ui-btn {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#popupTermin #lieferantRepeatTerminParent .ui-checkbox {
+    margin: -10px;
+}
+
+#popupTermin .topMarginCheckbox {
+    margin-top: 16px !important;
+}
+
+.clockpicker-popover {
+    z-index: 2010 !important;
+}
+
+input-group {
+    width: 110px;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+input-group-addon {
+    cursor: pointer;
+}
+
+.input-group-addon:last-child {
+    border-left: 1px;
+    float: right !important;
+    position: absolute;
+    top: 0px;
+    right: -1px;
+    display: inline-block !important;
+    height: 38px;
+    width: 37px;
+    webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+    pointer-events: none !important;
+}
+
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group>.btn, .input-group-btn:last-child>.dropdown-toggle, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:first-child>.btn-group:not(:first-child)>.btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.input-group-addon {
+    padding: 6px 14px 6px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.input-group-addon, .input-group-btn, .input-group .form-control {
+    display: table-cell;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.glyphicon {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url(../libs/timepicker/glyphicons-halflings-regular.eot);
+    src: url(../libs/timepicker/glyphicons-halflings-regularie.eot) format('embedded-opentype'), url(../libs/timepicker/glyphicons-halflings-regular.woff) format('woff'), url(../libs/timepicker/glyphicons-halflings-regular.ttf) format('truetype')
+}
+
+.glyphicon-time:before {
+    content: "\e023";
+}
+
+/**
+  Banner
+**/
+
+#bannerbackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2e2e2e url("../img/chalk_bg_tafel.jpg") repeat 0 0;
+    opacity: 0.95;
+}
+
+#mainbackground {
+    position: absolute;
+    top: 124px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F8F8F8;
+    -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #F1F1F1;
+}
+
+#banner {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#bannerext {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#besucherschein {
+    padding: 0 25px;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F8F8F8;
+    -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid #F1F1F1;
+}
+
+#tabs {
+    margin-top: 85px
+}
+
+#maintabs li a {
+    height: 36px !important;
+}
+
+#maintabs #konfigurationTabParent {
+    width: 40px;
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+#maintabs #konfigurationTabParent a {
+    padding-bottom: 0;
+}
+
+#maintabs #konfigurationTabParent a:after {
+    top: .4525em;
+}
+
+#maintabs li {
+    width: 23.9%;
+}
+
+@media (max-width: 600px) {
+    #maintabs li {
+        width: 23.3%;
+    }
+}
+
+@media (max-width: 450px) {
+    #maintabs li {
+        width: 22.7%;
+    }
+}
+
+/**
+background-color: #FFFFFF;
+
+background-color: #f9f9f9;
+   **/
+
+#tabs .ui-tabs-panel {
+    padding: 20px 15px 15px 15px;
+}
+
+.ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head+body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head+body .ui-btn-a.ui-focus, html head+body .ui-body-a.ui-focus {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+/**
+Navbar
+**/
+
+.ui-tabs-nav {
+    max-width: 900px !important;
+}
+
+.ui-navbar li .ui-btn {
+    border-right-width: 1px !important;
+}
+
+.ui-controlgroup-controls {
+    background: #ddd;
+}
+
+.ui-tabs-panel {
+    overflow: visible !important;
+}
+
+.subTabToggle {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 16px !important;
+}
+
+.subTabToggle .ui-btn.active, .subTabToggle  .ui-btn:active {
+    background-color: #38c !important;
+    background-image: none;
+    color: #fff !important;
+}
+
+.subTabToggle .ui-btn {
+
+}
+
+/**
+ Übersicht
+**/
+
+
+#auswahlAuftragshistorie {
+    padding: 0px 15px 15px 15px;
+    background-color: #E5E5E5;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+
+#selectedAuftragsHistorieLieferanten {
+    position: relative;
+    min-height: 42px;
+    background-color: #eee;
+    border-color: #ddd;
+    color: #333;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+}
+
+#auftragsZusammenfassung {
+    padding: 15px 15px 15px 15px;
+    background-color: #E5E5E5;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    margin-bottom: 15px;
+}
+
+
+
+#selectedAuftragsHistorieLieferanten .selectedLieferantShow {
+    color: #656565;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+#selectedAuftragsHistorieLieferanten .selectedLieferantShowMargin {
+    width: 110px;
+    display: inline-block
+}
+
+#selectedAuftragsHistorieLieferanten .selectedLieferantButton {
+    display: inline-block;
+    margin: 2px 0 -3px 2px !important;
+    padding: 8px 8px 4px 8px;
+    font-weight: normal !important;
+    font-size: 16px;
+}
+
+#selectedAuftragsHistorieLieferanten .selectedLieferantButton .selectedLieferantButtonRemove {
+    margin: -4px 0 0 10px !important;
+}
+
+#selectedAuftragsHistorieLieferanten .selectedLieferantButton .selectedLieferantButtonRemove:hover {
+    background-color: #f00;
+}
+
+.dataTables_wrapper {
+    padding: 15px 15px 15px 15px;
+    background-color: #E5E5E5;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.dataTables_wrapper table th {
+    text-align: left;
+    padding-left: 10px !important;
+}
+
+#statistikTab .labeled-chart-container {
+    margin: 25px 0px 0px 0px;
+    padding-left: 15px;
+    background-color: #E5E5E5;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+#statistikTab .labeled-chart-container .canvas-holder {
+    margin-bottom: 10px;
+}
+
+/**
+ Nachrichten
+**/
+
+.ui-collapsible-heading-toggle, .ui-collapsible-heading {
+    border: none !important;
+}
+
+.ui-collapsible-inset {
+    border: 1px solid #ccc;
+    border-radius: 5px !important;
+}
+
+.ui-collapsible-heading {
+    border-radius: 4px !important;
+}
+
+.ui-collapsible-content p {
+    margin-top: 0;
+}
+
+.ui-collapsible-content p a.lieferantMsgButton {
+    margin: 2px;
+}
+
+#sentMessageContainer .ui-collapsible-content, #recievedMessageContainer .ui-collapsible-content {
+    background-color: #FFF;
+    padding-bottom: 55px;
+    position: relative;
+}
+
+#sentMessageContainer .ui-collapsible-content .deleteMessageButton, #recievedMessageContainer .ui-collapsible-content .deleteMessageButton {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+#sentMessageContainer .ui-collapsible-heading a, #recievedMessageContainer .ui-collapsible-heading a {
+    font-weight: 100;
+}
+
+#recievedMessageContainer .ui-collapsible-heading.unread a {
+    border: 1px solid rgba(37, 211, 48, 0.55);
+    background-color: rgba(0, 189, 12, 1);
+    color: #fff;
+}
+
+#sentMessageContainer .ui-collapsible-heading.unread a {
+    border: 1px solid rgba(37, 211, 48, 0.55);
+    background-color: rgba(0, 189, 12, 1);
+    color: #fff;
+}
+
+#sentMessageContainer .ui-collapsible-content p.unread .msgunreadHint {
+    color: rgb(0, 105, 7);
+
+}
+
+#sendMessageLieferant {
+    position: absolute;
+    right: 0;
+    bottom: -55px;
+}
+
+#selectedMessageLieferanten {
+    position: relative;
+    min-height: 42px;
+    background-color: #eee;
+    border-color: #ddd;
+    color: #333;
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+}
+
+#selectedMessageLieferanten .selectedLieferantButton {
+    display: inline-block;
+    margin: 2px 0 -3px 2px !important;
+    padding: 8px 8px 4px 8px;
+    font-weight: normal !important;
+    font-size: 16px;
+}
+
+#selectedMessageLieferanten .selectedLieferantAn {
+    color: #656565;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+#selectedMessageLieferanten .selectedLieferantAnMargin {
+    width: 40px;
+    display: inline-block
+}
+
+#messageLieferantenEditor {
+    margin: 18px 0 80px 0;
+}
+
+#selectedMessageLieferanten .selectedLieferantButton .selectedLieferantButtonRemove {
+    margin: -4px 0 0 10px !important;
+}
+
+#selectedMessageLieferanten .selectedLieferantButton .selectedLieferantButtonRemove:hover {
+    background-color: #f00;
+}
+
+/**
+ Lieferanten
+**/
+
+
+#searchInfoLieferanten .ui-input-search {
+    margin-top: 0;
+}
+
+#lieferanthinzufuegen {
+    margin-top: 10px;
+}
+
+#lieferantenUebersicht {
+    padding: 0px 15px 15px 15px;
+    background-color: #E5E5E5;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+#lieferantenUebersichtListe {
+
+}
+
+
+
+#lieferantenInformationen {
+    padding: 0px 15px 15px 15px;
+    background-color: #E5E5E5;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+
+
+
+
+
+#lieferantenInformationen .ui-btn.ui-btn-b {
+    -webkit-transition: opacity 0.8s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 0.8s;
+}
+
+#lieferantenInformationen label {
+    margin-bottom: 0;
+    margin-top: 7px;
+}
+
+#lieferantZeigeAuftraege {
+    position: absolute;
+    right: 275px;
+}
+
+#lieferantErzeugeEvent {
+    position: absolute;
+    right: 125px;
+}
+
+#lieferantLoeschen {
+    position: absolute;
+    right: 15px;
+}
+
+#lieferantenInformationen  .ui-input-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+}
+
+#lieferantBearbeitenTitle {
+    padding-top: 15px;
+}
+
+#lieferantenUebersichtTitle {
+    padding-top: 15px;
+}
+
+#lieferantenInformationen table {
+    width: 100%;
+
+}
+
+#lieferantenInformationen table th {
+    text-align: left;
+    vertical-align: top;
+}
+
+#suchelieferanten .ui-input-text {
+    margin: 0 !important;
+}
+
+/*Konfiguration*/
+
+#marktInformationen .ui-btn.ui-btn-b {
+    -webkit-transition: opacity 0.8s;
+    transition: opacity 0.8s;
+}
+
+#popupTermin #searchTerminLieferanten {
+    position: absolute !important;
+    left: 20px;
+    right: 70px;
+    margin-bottom: 0;
+}
+
+#popupTermin #searchTerminLieferanten .ui-input-search {
+    margin: 0 !important;
+}
+
+#popupTermin #terminnotizen {
+    min-height: 100px;
+}
+
+#popupTermin #lieferantAuswahl {
+    width: 100%;
+    height: 40px;
+}
+
+#popupTermin #lieferantTerminLabel {
+    margin-top: 15px;
+}
+
+#popupTermin #terminnotizenLabel {
+    margin-top: 7px;
+}
+
+#popupTermin #lieferantTermin .ui-input-text {
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+#popupTermin #lieferantAnzeigen {
+    float: right;
+    margin-top: -5px;
+}
+
+#suchelieferantenliste {
+    position: absolute;
+    border: 2px solid rgba(102, 102, 102, 0.59);
+    top: 160px;
+    margin-bottom: 30px;
+    box-shadow: 5px 10px 20px #888888;
+    top: 95px;
+    z-index: 1;
+
+    -webkit-animation: fadeincomplete ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeincomplete ease-in 1;
+    animation: fadeincomplete ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode: forwards; /*FF 5+*/
+    -o-animation-fill-mode: forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode: forwards; /*IE 10+*/
+    animation-fill-mode: forwards; /*when the spec is finished*/
+
+    -webkit-animation-duration: 200ms;
+    -moz-animation-duration: 200ms;
+    animation-duration: 200ms;
+}
+
+#suchelieferantenliste .selected a {
+    background-color: #E2E2E2 !important;
+}
+
+#popupTermin #suchelieferantenliste .selected a {
+    background-color: #f6f6f6 !important;
+}
+
+/**
+ Termin Popup
+**/
+
+#popupTermin {
+    width: 850px
+}
+
+#popupTermin div.hasDatepicker {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+
+}
+
+#popupTermin div.hasDatepicker .ui-datepicker-inline {
+    -webkit-box-shadow: 0px 0px 6px /*{global-box-shadow-size}*/ rgba(0, 0, 0, .15) /*{global-box-shadow-color}*/ !important;
+    -moz-box-shadow: 0px 0px 6px /*{global-box-shadow-size}*/ rgba(0, 0, 0, .15) /*{global-box-shadow-color}*/ !important;
+    box-shadow: 0px 0px 6px /*{global-box-shadow-size}*/ rgba(0, 0, 0, .15) /*{global-box-shadow-color}*/ !important;
+}
+
+#popupTermin .bottombuttons {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 250px;
+    overflow: visible;
+    white-space: nowrap;
+
+}
+
+#popupTermin .bottombuttons.newevent {
+    max-width: 245px;
+}
+
+#popupTermin #loescheaktuelleseventbutton.newevent {
+    display: none !important;
+}
+
+#popupTermin .bottombuttons.saved {
+    max-width: 75px;
+}
+
+#popupTermin .bottombuttons #speichereaktuelleseventbutton.fade, #popupTermin .bottombuttons #abbrechenbearbeitungaktuelleseventbutton.fade, #popupTermin  #loescheaktuelleseventbutton.fade {
+    opacity: 0; /* make things invisible upon start */
+    -webkit-animation: fadeincomplete ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeincomplete ease-in 1;
+    animation: fadeincomplete ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode: forwards; /*FF 5+*/
+    -o-animation-fill-mode: forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode: forwards; /*IE 10+*/
+    animation-fill-mode: forwards; /*when the spec is finished*/
+
+    -webkit-animation-duration: 400ms;
+    -moz-animation-duration: 400ms;
+    animation-duration: 400ms;
+}
+
+
+#popupTermin #loescheaktuelleseventbutton {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+#popupTermin #terminheader {
+    margin-top: 7px;
+
+}
+
+#popupTermin .redborder, #lieferantenInformationen .redborder {
+    -webkit-box-shadow: inset 0 1px 3px rgba(255, 0, 0, .2) !important;
+    -moz-box-shadow: inset 0 1px 3px rgba(255, 0, 0, .2) !important;
+    box-shadow: inset 0 1px 3px rgba(255, 0, 0, 0.2) !important;
+    border-color: #f00 !important;
+}
+
+#ui-datepicker-div {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    margin-top: 1px;
+}
+
+.popover {
+    border-radius: 0 !important;
+    margin-top: -1px !important;
+    opacity: 0; /* make things invisible upon start */
+    -webkit-animation: fadeincomplete ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeincomplete ease-in 1;
+    animation: fadeincomplete ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode: forwards; /*FF 5+*/
+    -o-animation-fill-mode: forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode: forwards; /*IE 10+*/
+    animation-fill-mode: forwards; /*when the spec is finished*/
+
+    -webkit-animation-duration: 150ms;
+    -moz-animation-duration: 150ms;
+    animation-duration: 150ms;
+
+}
+
+.popover .arrow {
+    display: none !important;
+}
+
+/*Calender Event fade in*/
+
+.fc-widget-content.fade .fc-event-container {
+    opacity: 0; /* make things invisible upon start */
+    -webkit-animation: fadeincomplete ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeincomplete ease-in 1;
+    animation: fadeincomplete ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode: forwards; /*FF 5+*/
+    -o-animation-fill-mode: forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode: forwards; /*IE 10+*/
+    animation-fill-mode: forwards; /*when the spec is finished*/
+
+    -webkit-animation-duration: 300ms;
+    -moz-animation-duration: 300ms;
+    animation-duration: 300ms;
+}
+
+.fadein {
+    opacity: 0; /* make things invisible upon start */
+    -webkit-animation: fadeincomplete ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation: fadeincomplete ease-in 1;
+    animation: fadeincomplete ease-in 1;
+
+    -webkit-animation-fill-mode: forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode: forwards; /*FF 5+*/
+    -o-animation-fill-mode: forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode: forwards; /*IE 10+*/
+    animation-fill-mode: forwards; /*when the spec is finished*/
+
+    -webkit-animation-duration: 400ms;
+    -moz-animation-duration: 400ms;
+    animation-duration: 400ms;
+
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeincomplete {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeincomplete {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeincomplete {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeslideincomplete {
+    from {
+        -webkit-transform: scale(0.995);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeslideincomplete {
+    from {
+        -moz-transform: scale(0.995);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeslideincomplete {
+    from {
+        transform: scale(0.995);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.clockpicker-span-hours, .clockpicker-span-minutes {
+    font-size: 0.77em !important;
+}
+
+.clockpicker-popover .popover-title {
+    line-height: 28px;
+}
+
+/**
+Allgemein
+**/
+
+.tabinhalt {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+    opacity: 0;
+
+}
+
+.tabinhalt.animate {
+    -webkit-animation: fadeslideincomplete ease-out 1;
+    -moz-animation: fadeslideincomplete ease-out 1;
+    animation: fadeslideincomplete ease-out 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 150ms;
+    -moz-animation-duration: 350ms;
+    animation-duration: 350ms;
+}
+
+/**
+Colors
+**/
+
+.lightgreenbutton {
+    background-color: rgb(0, 189, 12) !important;
+    color: #fff !important;
+}
+
+.lightgreenbutton:hover {
+    background-color: rgb(0, 179, 2) !important;
+}
+
+.lightgreenbutton:active {
+    background-color: rgb(0, 163, 0) !important;
+}
+
+.greenbutton {
+    background-color: rgb(0, 113, 23) !important;
+    color: #fff !important;
+}
+
+.greenbutton:hover {
+    background-color: rgb(20, 133, 43) !important;
+}
+
+.greenbutton:active {
+    background-color: rgb(0, 93, 3) !important;
+}
+
+.redbutton {
+    background-color: rgb(113, 0, 23) !important;
+    color: #fff !important;
+
+}
+
+.redbutton:hover {
+    background-color: rgb(133, 20 43) !important;
+}
+
+.redbutton:active {
+    background-color: rgb(93, 0, 3) !important;
+}
+
+#lieferantenInformationen.neu {
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 1.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: greenPulse;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+}
+
+@-webkit-keyframes greenPulse {
+    from {
+        background-color: rgba(116, 154, 2, 0.27);
+        -webkit-box-shadow: 0 0 1px #333;
+        opacity: 0
+    }
+    50% {
+        background-color: rgba(145, 189, 9, 0.7);
+        -webkit-box-shadow: 0 0 1px #91bd09;
+        opacity: 1
+    }
+    to {
+        background-color: #E5E5E5;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+@keyframes greenPulse {
+    from {
+        background-color: rgba(116, 154, 2, 0.27);
+        box-shadow: 0 0 1px #333;
+        opacity: 0
+    }
+    50% {
+        background-color: rgba(145, 189, 9, 0.7);
+        box-shadow: 0 0 1px #91bd09;
+        opacity: 1
+    }
+    to {
+        background-color: #E5E5E5;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+#lieferantenInformationen.neumitalt {
+    -webkit-animation-name: greenPulseAlt;
+    -webkit-animation-duration: 1.3s;
+    -webkit-animation-iteration-count: 1;
+    animation-name: greenPulseAlt;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+}
+
+@-webkit-keyframes greenPulseAlt {
+    from {
+        background-color: #E5E5E5;
+        -webkit-box-shadow: 0 0 1px #333;
+    }
+    50% {
+        background-color: rgba(145, 189, 9, 0.7);
+        -webkit-box-shadow: 0 0 1px #91bd09;
+    }
+    to {
+        background-color: #E5E5E5;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+@keyframes greenPulseAlt {
+    from {
+        background-color: #E5E5E5;
+        box-shadow: 0 0 1px #333;
+    }
+    50% {
+        background-color: rgba(145, 189, 9, 0.7);
+        box-shadow: 0 0 1px #91bd09;
+    }
+    to {
+        background-color: #E5E5E5;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+#lieferantenInformationen.geladen {
+    -webkit-animation-name: whitePulse;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+
+    animation-name: whitePulse;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@-webkit-keyframes whitePulse {
+    from {
+        background-color: #E5E5E5;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+    50% {
+        background-color: #D5D5D5;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+    to {
+        background-color: #E5E5E5;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+@keyframes whitePulse {
+    from {
+        background-color: #E5E5E5;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+    50% {
+        background-color: #D5D5D5;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+    to {
+        background-color: #E5E5E5;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    }
+}
+
+#lieferantenInformationen.geloescht {
+    -webkit-animation-name: greyPulse;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: greyPulse;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes greyPulse {
+    from {
+        background-color: #E5E5E5;
+    }
+    30% {
+        background-color: #f9f9f9;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        opacity: 0.9
+    }
+    to {
+        background-color: #f9f9f9;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        opacity: 0
+    }
+}
+
+@keyframes greyPulse {
+    from {
+        background-color: #f9f9f9;
+    }
+    30% {
+        background-color: #f9f9f9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        opacity: 0.9
+    }
+    to {
+        background-color: #f9f9f9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+        opacity: 0
+    }
+}
+
+#marktauswahl {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative !important;
+}
+
+/**
+   Besucherschein
+**/
+
+#besucherscheinContent {
+    font-size: 20px;
+}
+
+#besucherscheinContent table {
+    border-spacing: 15px;
+}
+
+#besucherscheinDatum {
+    width: 210px;
+}
+
+#besucherscheinUhrzeit {
+    width: 130px;
+}
+
+.titledatafield {
+    font-weight: bold;
+    width: 100px;
+}
+
+.contentdatafield {
+    background: #FFF;
+    border-bottom: 1px dashed #000;
+    padding: 5px;
+
+}
+
+.selectiondatafield {
+    width: 35px;
+    background: #fff;
+    padding: 3px 0px 3px 10px;
+    border: 1px solid #A5A5A5;
+}
+
+

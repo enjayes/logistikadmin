@@ -1,0 +1,27 @@
+{
+  "name": "logistikserver",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+    "debug": "^2.1.0",
+    "express": "^4.10.5",
+    "http": "*",
+    "mysql": "~2.5.3",
+    "socket.io": "~1.2.0",
+    "moment": "~2.8.4",
+	"nodemailer":"1.4.0"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  "main": "server.js"
+}

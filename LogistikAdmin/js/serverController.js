@@ -50,8 +50,8 @@ serverController = {
         }
         else{
 
-            console.log('io.connect("http://nodejs-edeka.rhcloud.com:80/")');
-            serverController.socket = io.connect("http://nodejs-edeka.rhcloud.com:80/", {"force new connection": true});
+            console.log('io.connect("http://demo-edeka.rhcloud.com:80/")');
+            serverController.socket = io.connect("http://demo-edeka.rhcloud.com:80/", {"force new connection": true});
         }
 
 

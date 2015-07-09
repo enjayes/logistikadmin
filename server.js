@@ -38,7 +38,7 @@ var preferencesLocal = {
     port: 3142,
     ip: "localhost",
     mysql: {
-        host: "nodejs-edeka.rhcloud.com",//"127.2.197.2",//sql_server_ip_address,
+        host: "demo-edeka.rhcloud.com",//"127.2.197.2",//sql_server_ip_address,
         port:  3306,// sql_server_port,
         user: 'admin1lvarUX',
         password: '8Ny5vS64wYVm',
